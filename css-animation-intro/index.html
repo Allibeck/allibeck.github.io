@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animation Playground</title>
+    <style>
+      /* Add your global styles here */
+      #element1:hover {
+        background: yellow;
+        transform: scaleY(.5);
+      }
+
+      #element2:hover {
+        background: blue;
+        transform: rotateZ(90deg);
+      }
+
+      #element3:hover {
+        background: green;
+        transform: translateY(100px);
+        animation-name: slide;
+        animation-duration: 3s;
+      }
+
+      .animated-element {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        margin: 20px;
+        display: inline-flex; /* Use flex to center text vertically */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        text-align: center; /* Center text horizontally */
+        transition: background 1s, transform 0.3s 1s;
+
+        /* You can add animation/transition code to all elements here *
+      }
+      
+        @keyframes slide {
+          from{ transform: translateY(0)}
+          to{ transform: translateY(100px)}
+        }
+
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>CSS Animation Playground</h1>
+    <div class="animated-element" id="element1">Hover me</div>
+  
+    <div class="animated-element" id="element2">Hover me</div>
+
+    <div class="animated-element" id="element3">Hover me</div>
+
+    <!-- You can add more elements here -->
+    
+
+    <script>
+      // JavaScript for adding interactivity (if needed)
+
+      // For example: if you want to add a class when an element gets clicked, use code similar to:
+      // const elementX = document.getElementById("elementX");
+      // elementX.addEventListener("click", () => {
+      // elementX.classList.toggle("clicked"); // Adds "clicked" class if it's not there, otherwise it removes it
+      // });
+    </script>
+  </body>
+</html>
