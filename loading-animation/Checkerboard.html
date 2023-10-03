@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Checkerboard Loading Animation</title>
+</head>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #pink;
+}
+
+.checkerboard {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), 
+                linear-gradient(45deg, #000 25%, pink 25%, pink 75%, #000 75%, #000);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    animation: checkerboard 2s linear infinite;
+}
+
+@keyframes checkerboard {
+    0% {
+        background-position: 0 0, 10px 10px;
+    }
+    100% {
+        background-position: 20px 20px, 30px 30px;
+    }
+}
+.checkerboard {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, ee3232 25%, transparent 25%, transparent 75%, #000 75%, #000), 
+                linear-gradient(45deg, #ee3232 25%, gray 25%, rgb(195, 249, 195) 75%, #000 75%, #000);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    animation: checkerboard 2s linear infinite;
+}
+
+@keyframes checkerboard {
+    0% {
+        background-position: 0 0, 10px 10px;
+    }
+    100% {
+        background-position: 20px 20px, 30px 30px;
+    }
+}
+
+</style>
+<body>
+    <div class="checkerboard"></div>
+</body>
+</html>
