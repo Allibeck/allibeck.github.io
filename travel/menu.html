@@ -1,202 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-.header{
-    border-bottom: 1px solid #E2E8F0;
-}
+/* navbar style*/
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
 
-.hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-}
-
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-item {
-    margin-left: 5rem;
-}
-
-.nav-link{
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #475569;
-}
-
-@media only screen and (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 5rem;
-        flex-direction: column;
-        background-color: #fff;
-        width: 100%;
-        border-radius: 10px;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-
-    .nav-menu.active {
-        left: 0;
+    
+    html {
+        font-size: 62.5%;
+        font-family: 'Roboto', sans-serif;
     }
-
-    .nav-item {
-        margin: 2.5rem 0;
+    
+    li {
+        list-style: none;
     }
-
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .header{
+        border-bottom: 1px solid #E2E8F0;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+    
     .hamburger {
+        display: none;
+    }
+    
+    .bar {
         display: block;
-        cursor: pointer;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        background-color: #101010;
+    }
+    
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-item {
+        margin-left: 5rem;
+    }
+    
+    .nav-link{
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #475569;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .nav-menu {
+            position: fixed;
+            left: -100%;
+            top: 5rem;
+            flex-direction: column;
+            background-color: #fff;
+            width: 100%;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow:
+                0 10px 27px rgba(0, 0, 0, 0.05);
+        }
+    
+        .nav-menu.active {
+            left: 0;
+        }
+    
+        .nav-item {
+            margin: 2.5rem 0;
+        }
+    
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+    
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .hamburger.active .bar:nth-child(1) {
+            -webkit-transform: translateY(8px) rotate(45deg);
+            transform: translateY(8px) rotate(45deg);
+        }
+    
+        .hamburger.active .bar:nth-child(3) {
+            -webkit-transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
+/*navbar style^*/
+
+/*logo style*/
+
+#logo {
+    display: block;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;   
+    width: 50%; 
+    height: 50%; 
+    border: 1px solid red;
+}
+
+    .cls-1 {
+              fill: #fff;
+            }
+      
+            .cls-1, .cls-2 {
+              stroke: #000;
+              stroke-miterlimit: 10;
+            }
+      
+            .cls-2 {
+              fill: none;
+            }
+
+    .wave {
+        fill: none;
+        stroke: red;
     }
 
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-body {
-background-image: url('img_Europe.jpg');
-color: #FFFFFF;
-}
-
+    .path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+/*logo style^*/
 </style>
+</head>
 
-<header class="header">
-    <nav class="navbar">
-        <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="#" class="nav-link">Inspiration</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Destination</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Places to stay</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">Reader's Choice</a>
-            </li>
-        </ul>
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </nav>
-</header>
+<body>
+<!--navbar html-->
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+<!--navbar html-->
 
-
+<!--navbar svg-->
+<div id="burger">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 612 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st1{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
-	
 </style>
-<g id="Layer_1">
-	<g>
-		<path class="st0" d="M183.2,169.3v11.3h-19.7v45.3h-12.6v-45.3h-19.8v-11.3H183.2z"/>
-		<path class="st0" d="M235.5,225.9h-14.4l-11.2-20.4c-9,0-10.4,0-10.4,0v20.4h-12.6v-56.7h26.2c12.4,0,19.9,8.9,19.9,18.3
-			c0,7.3-4.2,14.3-10.9,16.7L235.5,225.9z M214.1,194.5c4.4,0,7.9-2.7,7.9-7c0-4.4-3.5-7.3-7.9-7.3h-14.6v14.3H214.1z"/>
-		<path class="st0" d="M270.2,214.2h-20.9l-4.4,11.7H233l20.8-56.7H267l19.6,56.7h-11.9L270.2,214.2z M266.3,203.8l-6.5-17.3
-			l-6.5,17.3H266.3z"/>
-		<path class="st0" d="M296.4,225.9l-18.7-56.7h11.9l13.5,40.9l13.6-40.9h11.9l-18.7,56.7L296.4,225.9z"/>
-		<path class="st0" d="M371.8,169.3v11.3h-28.2v10.1l23.5,0.1v11.3l-23.5-0.1v12.6h28.2v11.3h-40.5v-56.7L371.8,169.3L371.8,169.3z"
-			/>
-		<path class="st0" d="M418.5,214.6v11.3h-40.2v-56.7h12.6v45.3L418.5,214.6L418.5,214.6z"/>
-		<path class="st0" d="M461.9,169.3v11.3h-28.2v10.1l23.5,0.1v11.3l-23.5-0.1v12.6h28.2v11.3h-40.5v-56.7L461.9,169.3L461.9,169.3z"
-			/>
-		<path class="st0" d="M516.9,225.9h-14.4l-11.2-20.4c-9,0-10.4,0-10.4,0v20.4h-12.6v-56.7h26.2c12.4,0,19.9,8.9,19.9,18.3
-			c0,7.3-4.2,14.3-10.9,16.7L516.9,225.9z M495.6,194.5c4.4,0,7.9-2.7,7.9-7c0-4.4-3.5-7.3-7.9-7.3H481v14.3H495.6z"/>
-	</g>
-</g>
-<g id="Layer_2">
-	<path class="st1" d="M183.2,295c20-2.5,29.8-9.7,35-16c5-6,7.3-12.9,16-19c8.9-6.3,15.4-6.9,17-7c2.5-0.1,12.2-0.4,16.4,6.4
-		c0.2,0.4,3.4,5.2,1.5,9.8c-1.3,3.2-4.5,5-5,4.6c-0.4-0.3,1.7-2.3,1.4-5.2c-0.2-2.5-2-4.3-2.5-4.7c-3.1-2.8-7.6-1.8-8.2-1.7
-		c-6.1,1.3-11.6,8.7-9.9,14.2c1.9,6,11.6,6.8,14.2,7c11.1,0.9,19.8-5.8,21.9-7.5c9.6-7.9,6.8-14.3,15.8-20.4
-		c0.6-0.4,13.2-8.8,23.1-3c7,4.1,8.2,12.5,8.2,12.9c0.3,2.3,1,7.7-2.9,11.3c-4.4,4.1-11.5,2.5-11.6,1.8c-0.1-0.5,3.4-0.4,5.7-3
-		c2.1-2.4,3.3-7.2,0.7-10.2c-2.4-2.8-6.8-2.3-9.3-1.3c-4.2,1.8-6.7,6.9-5.9,10.8c1.3,6.2,11,9.7,18.5,9.1c3.1-0.2,7.3-1.2,24.2-14.7
-		c9.5-7.6,8.5-8,12.9-10.8c5.4-3.4,17.9-11,30.1-6.1c7.3,3,12.8,9.7,14.7,17c0.5,2,2.1,8.5-1.1,15.4c-0.6,1.4-2.7,5.6-7.3,8.4
-		c-4.4,2.7-9.9,3.4-10.4,2.3c-0.6-1.4,8.4-3.7,11.1-11.1c2-5.3,0.6-13-4.3-16.3c-6.6-4.4-18,0-21.7,8.4c-3.6,8.3,1.6,17.6,7.9,21.3
-		c6.5,3.8,14,1.6,17.9,0.4c6.2-1.9,8.2-4.4,28.3-19c4.1-3,7.1-5.1,11.6-5.6c6.1-0.6,11.2,2.2,14.2,4.3"/>
-</g>
 </svg>
+<!--navbar svg-->
 
+<!--navbar script-->
+<script src="/main.js"></script>
+        <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
 
-<script>
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+        hamburger.addEventListener("click", mobileMenu);
 
-hamburger.addEventListener("click", mobileMenu);
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
 
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
+        const navLink = document.querySelectorAll(".nav-link");
 
-const navLink = document.querySelectorAll(".nav-link");
+        navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-navLink.forEach(n => n.addEventListener("click", closeMenu));
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+        </script>
+</div>
+<!-- navbar script^ -->
 
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}
+<!--traveler and wave svg-->
+<div id="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 387.19644 109.37596" overflow="visible">
+        <g id="traveler" width="1000" height="500">
+          <g id="traveler" data-name="traveler">
+            <g>
+              <path class="cls-2" stroke="red" d="m52.60001.60121v11.3h-19.7v45.3h-12.60001V11.90121H.5V.60121h52.10001Z"/>
+              <path class="cls-2" stroke="red" d="m104.90001,57.2012h-14.39999l-11.2-20.39999h-10.39999v20.39999h-12.60001V.50121h26.2c12.39999,0,19.89999,8.89999,19.89999,18.3,0,7.3-4.2,14.3-10.89999,16.7l13.39999,21.7Zm-21.39999-31.39999c4.39999,0,7.89999-2.7,7.89999-7,0-4.39999-3.5-7.3-7.89999-7.3h-14.60001v14.3h14.60001Z"/>
+              <path class="cls-2" stroke="red" d="m139.60002,45.50121h-20.89999l-4.39999,11.7h-11.90002L123.20001.50121h13.2l19.60001,56.7h-11.89999l-4.5-11.7Zm-3.90002-10.39999l-6.5-17.3-6.5,17.3h13Z"/>
+              <path class="cls-2" stroke="red" d="m165.8,57.2012L147.09999.50121h11.89999l13.5,40.90001L186.09999.50122h11.89999l-18.70001,56.7-13.49997-.00002Z"/>
+              <path class="cls-2" stroke="red" d="m241.2.60121v11.3h-28.20001v10.10001l23.5.10001v11.3l-23.5-.10001v12.60001h28.20001v11.3h-40.5V.50124l40.5.09998h0Z"/>
+              <path class="cls-2" stroke="red" d="m287.90001,45.90121v11.3h-40.20001V.50122h12.60001v45.3l27.60001.09999h0Z"/>
+              <path class="cls-2" stroke="red" d="m331.3.60121v11.3h-28.20001v10.10001l23.5.10001v11.3l-23.5-.10001v12.60001h28.20001v11.3h-40.5V.50124l40.5.09998h0Z"/>
+              <path class="cls-2" stroke="red" d="m386.30003,57.2012h-14.39999l-11.20001-20.39999h-10.39999v20.39999h-12.60001V.50121h26.20001c12.39999,0,19.89999,8.89999,19.89999,18.3,0,7.3-4.20001,14.3-10.89999,16.7l13.39999,21.7Zm-21.30002-31.39999c4.39999,0,7.89999-2.7,7.89999-7,0-4.39999-3.5-7.3-7.89999-7.3h-14.60001v14.3h14.60001Z"/>
+            </g>
+          </g>
+        </g>
+        <g id="wave">
+          <g id="wave" data-name="wave">
+            <path class="cls-1" stroke="red" d="m111.53239,105.76074c12.89598-1.612,19.21502-6.25456,22.56797-10.31679,3.224-3.86879,4.70704-8.3179,10.31679-12.25118,5.73871-4.06224,9.9299-4.44911,10.96159-4.51359,1.612-.06448,7.86655-.25792,10.57471,4.12671.12897.25792,2.19231,3.35296.9672,6.31902-.83823,2.06337-2.9016,3.224-3.224,2.96608-.25792-.19343,1.09617-1.48303.90271-3.35296-.12897-1.612-1.2896-2.77263-1.612-3.03056-1.99888-1.80543-4.90048-1.16063-5.28735-1.09617-3.93328.83823-7.47967,5.60976-6.38351,9.15616,1.22511,3.86879,7.47966,4.38463,9.15615,4.51359,7.15727.58032,12.76702-3.73983,14.1211-4.83599,6.19008-5.09391,4.38463-9.22062,10.18782-13.1539.38688-.25792,8.51136-5.67423,14.89486-1.9344,4.51359,2.64368,5.28736,8.05999,5.28736,8.3179.19343,1.48303.6448,4.96496-1.86991,7.28622-2.83711,2.64368-7.41519,1.612-7.47967,1.16063-.06448-.3224,2.19231-.25792,3.67536-1.9344,1.35408-1.54751,2.12783-4.64256.45137-6.57696-1.54751-1.80543-4.38463-1.48303-5.99662-.83823-2.70816,1.16063-4.32016,4.44911-3.80431,6.96382.83823,3.99776,7.09279,6.25456,11.92878,5.86768,1.99888-.12897,4.70703-.77377,15.60415-9.47856,6.12559-4.90048,5.48079-5.15839,8.3179-6.96382,3.48191-2.19231,11.5419-7.09279,19.40846-3.93328,4.70703,1.9344,8.25342,6.25456,9.47856,10.96159.3224,1.2896,1.35408,5.48079-.70928,9.9299-.38688.90271-1.74097,3.61088-4.70703,5.41631-2.83711,1.74097-6.38351,2.19231-6.70591,1.48303-.38688-.90271,5.41631-2.38576,7.15727-7.15727,1.2896-3.41743.38688-8.38239-2.77263-10.51022-4.25568-2.83711-11.60638,0-13.99215,5.41631-2.32128,5.35183,1.03168,11.34847,5.09391,13.73421,4.19119,2.45023,9.02719,1.03168,11.5419.25792,3.99776-1.22511,5.28736-2.83711,18.24781-12.25118,2.64368-1.9344,4.57808-3.28848,7.47967-3.61088,3.93328-.38688,7.22176,1.41857,9.15616,2.77263"/>
+          </g>
+        </g>
+      </svg>
+<!--traveler and waven svg^ -->
 
-</script>
-
+<!--traveler and waven script-->
+      <script src="anime.min.js"></script>
+    <script>
+            anime({
+                targets: '#traveler',
+                strokeDashoffset: [anime.setDashoffset, 0],
+                easing: 'easeInOutSine',
+                duration: 1500,
+                delay: function(el, i) { return i * 250 },
+                direction: 'alternate',
+                loop: true
+                });
+    </script>
+</div>
+<!-- traveler and wave script^ -->
+</body>
+</html>
 
 
 
