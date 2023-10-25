@@ -3,7 +3,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 612 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
 <style type="text/css">
-	.st0, st1{
+	.traveler{
 		font-family:'NeutralFaceBold';
 		font-size: 50px;
       }
@@ -16,6 +16,21 @@
 		}
 </style>
 
+<script src="./anime-3.2.1/lib/anime.min.js"></script>
+<script>
+	let path = anime.path "svg path";
+
+	anime({
+		targets: "svg path"
+		strokeDashoffset: [anime.setDashoffset, 0],
+		translateX: path('x'),
+		translateY:path('y'),
+		easing: 'easeInOutSine',
+		duration: 1500,
+		loop: true,
+	})
+	</script>
+	
 <g id="traveler">
 	<g id="traveler">
 		<text transform="matrix(1 0 0 1 173.7803 121.5874)" class="st0 st1">TRAVELER</text>
@@ -33,17 +48,4 @@
 		c5.2-0.9,9.3,0.6,10.2,1c2,0.8,3.4,1.7,4.4,2.5"/>
 </g>
 </svg>
-<script src="anime.min.js"></script>
-<script>
-	let path = anime.path "svg path";
 
-	anime({
-		targets: "svg path"
-		strokeDashoffset: [anime.setDashoffset, 0],
-		translateX: path('x'),
-		translateY:path('y'),
-		easing: 'easeInOutSine',
-		duration: 1500,
-		loop: true,
-	})
-	</script>
