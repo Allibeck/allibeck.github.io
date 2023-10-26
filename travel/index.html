@@ -46,11 +46,10 @@ body {
 }
 
 img {
-background-image: url(Iceland.jpeg);
-background-repeat: no-repeat;
-background-size: cover;
-max-width: 100%;
-margin-top: 10px;
+  background: url(Iceland.jpeg) no-repeat;
+  background-size: cover;
+  max-width: 100%;
+  margin-top: 10px;
 }
 
 /* Ensure proper sizing */
@@ -79,6 +78,7 @@ margin-top: 10px;
   background-color: white; /* White background color */
   padding: 20px; /* Some padding */
   font-weight: 200;
+}
 
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
@@ -106,28 +106,49 @@ a {
 }
 
 /* review styling */
-#rvheader {
+.rvheader {
     transform: translateY(-50px);
+    margin-bottom: 20px;
+    margin-top: 50px;
 }
 
 #reviews {
     display: flex;
-
+    justify-content: center;
 }
 
 
 [id^="rvw"] {
     border: 2px solid black;
     border-radius: 5%;
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 200px;
     opacity: 0;
+    margin-top: 25px;
+    margin-right: 20px;
+    justify-content: center;
 }
 
 .review-text {
     margin: 25px;
     text-align: center;
     overflow-wrap: break-word;
+}
+
+#rvw1 {
+  text-align: center; /* Center align the text within the container */
+}
+
+#rvw3 {
+  text-align: center; /* Center align the text within the container */
+}
+
+#rvw1 h2 {
+  text-align: center; /* Center align the text within the container */
+}
+
+#rvw3 h2 {
+  margin: auto; /* Center the h2 element horizontally */
 }
 
 /* back to top button stylings */
@@ -141,13 +162,15 @@ a {
     background: lightskyblue;
     border: 2px solid black;
     border-radius: 5%;
-    width: 75px;
+    width: 25%;
 }
 
 #arrows {
     display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
-}
+
 </style>
 <script src="../anime-3.2.1/lib/anime.min.js"></script>
 </head>
@@ -173,7 +196,7 @@ a {
 </div>
 
 <!-- review/timeline segment-->
-<h2 id="rvheader">Here's what the people have to say!</h2>
+<h2 class="rvheader" id="rvheader">Here's what the people have to say!</h2>
 <div id="reviews">
     <div id="rvw1">
         <h2>Guy Person</h2>
@@ -219,29 +242,33 @@ a {
 
 <!--back to top button-->
 
-<div id="footer">
-    <div id="arrows">
-        <svg id="arr1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+<div id="arrows">
+        <svg id="arr1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 32 32" overflow="visible">
             <g id="_90-Arrow_Up" data-name="90-Arrow Up">
                 <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
                 <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
             </g>
         </svg>
-        <svg id="arr2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+        <svg id="arr2" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 32 32" overflow="visible">
             <g id="_90-Arrow_Up" data-name="90-Arrow Up">
                 <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
                 <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
             </g>
         </svg>
-        <svg id="arr3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+        <svg id="arr3" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 32 32" overflow="visible">
             <g id="_90-Arrow_Up" data-name="90-Arrow Up">
                 <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
                 <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
             </g>
         </svg>
-    </div>
-</div>
+ </div>
+
 <div id="goto_top">Go Back to Top</div>
+</div>
+<footer">
+  <p>Company © ACWebDesign. All rights reserved.</p>
+</footer>
+
 <!--script for button-->
 <script>
     // Get references to the button and parent element to animate
@@ -265,11 +292,5 @@ a {
         loop: true,
     })
 </script>
-
 </body>
-
-<footer">
-  <p>Company © ACWebDesign. All rights reserved.</p>
-</footer>
-
 </html>
