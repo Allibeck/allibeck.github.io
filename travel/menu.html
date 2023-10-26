@@ -148,7 +148,7 @@
     }
 
     .path {
-        stroke-dasharray: 1000;
+        stroke-dasharray: 20;
         stroke-dashoffset: 0;
     }
 /*logo style^*/
@@ -176,6 +176,25 @@
     margin: 25px;
     text-align: center;
     overflow-wrap: break-word;
+}
+
+/* back to top button stylings */
+
+#footer {
+    transform: scale(0.1,0.1);
+}
+
+#goto_top {
+    display: flex;
+    background: lightskyblue;
+    border: 2px solid black;
+    border-radius: 5%;
+    width: 75px;
+}
+
+#arrows {
+    display: flex;
+    transform: scale(0.1,0.1);
 }
 </style>
 </head>
@@ -281,6 +300,7 @@ function closeMenu() {
 </div>
 <!-- traveler and wave script^ -->
 
+<!-- review/timeline segment-->
 <h2 id="rvheader">Here's what the people have to say!</h2>
 <div id="reviews">
     <div id="rvw1">
@@ -322,6 +342,56 @@ function closeMenu() {
         targets: "[id^=\"rvw\"]",
         opacity: 0,
     }, "+=1000");
+</script>
+<!-- end reviews/timeline segment-->
+
+<!--back to top button-->
+
+<div id="footer">
+    <div id="arrows">
+        <svg id="arr1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+            <g id="_90-Arrow_Up" data-name="90-Arrow Up">
+                <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
+                <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
+            </g>
+        </svg>
+        <svg id="arr2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+            <g id="_90-Arrow_Up" data-name="90-Arrow Up">
+                <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
+                <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
+            </g>
+        </svg>
+        <svg id="arr3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+            <g id="_90-Arrow_Up" data-name="90-Arrow Up">
+                <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
+                <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
+            </g>
+        </svg>
+    </div>
+</div>
+<div id="goto_top">Go Back to Top</div>
+<!--script for button-->
+<script>
+    // Get references to the button and parent element to animate
+    const button = document.querySelector('#goto_top');
+
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    button.addEventListener('click', () => {topFunction()});
+</script>
+<script>
+    let top_button_anime = anime({
+        targets: '[id^=\"arr\"]',
+        translateY: -25,
+        duration: 300,
+        delay: anime.stagger(150),
+        easing: "easeOutSine",
+        direction: "alternate",
+        loop: true,
+    })
 </script>
 </body>
 </html>
