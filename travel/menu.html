@@ -126,6 +126,7 @@
     width: 50%; 
     height: 50%; 
     border: 1px solid red;
+    transform: translateY(-1000px);
 }
 
     .cls-1 {
@@ -147,10 +148,54 @@
     }
 
     .path {
-        stroke-dasharray: 1000;
+        stroke-dasharray: 20;
         stroke-dashoffset: 0;
     }
 /*logo style^*/
+
+/* review styling */
+#rvheader {
+    transform: translateY(-50px);
+}
+
+#reviews {
+    display: flex;
+
+}
+
+
+[id^="rvw"] {
+    border: 2px solid black;
+    border-radius: 5%;
+    width: 200px;
+    height: 100px;
+    opacity: 0;
+}
+
+.review-text {
+    margin: 25px;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+/* back to top button stylings */
+
+#footer {
+    transform: scale(0.1,0.1);
+}
+
+#goto_top {
+    display: flex;
+    background: lightskyblue;
+    border: 2px solid black;
+    border-radius: 5%;
+    width: 75px;
+}
+
+#arrows {
+    display: flex;
+    transform: scale(0.1,0.1);
+}
 </style>
 </head>
 
@@ -182,8 +227,7 @@
 <!--navbar html-->
 
 <!--navbar svg-->
-<div id="burger">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+<svg id="burger" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 612 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
@@ -193,28 +237,26 @@
 <!--navbar svg-->
 
 <!--navbar script-->
-<script src="/main.js"></script>
-        <script>
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
+<script>
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-        hamburger.addEventListener("click", mobileMenu);
+hamburger.addEventListener("click", mobileMenu);
 
-        function mobileMenu() {
-            hamburger.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        }
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
 
-        const navLink = document.querySelectorAll(".nav-link");
+const navLink = document.querySelectorAll(".nav-link");
 
-        navLink.forEach(n => n.addEventListener("click", closeMenu));
+navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-        function closeMenu() {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }
-        </script>
-</div>
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+</script>
 <!-- navbar script^ -->
 
 <!--traveler and wave svg-->
@@ -243,7 +285,7 @@
 <!--traveler and waven svg^ -->
 
 <!--traveler and waven script-->
-      <script src="anime.min.js"></script>
+    <script src="../anime-3.2.1/lib/anime.min.js"></script>
     <script>
             anime({
                 targets: '#traveler',
@@ -257,6 +299,100 @@
     </script>
 </div>
 <!-- traveler and wave script^ -->
+
+<!-- review/timeline segment-->
+<h2 id="rvheader">Here's what the people have to say!</h2>
+<div id="reviews">
+    <div id="rvw1">
+        <h2>Guy Person</h2>
+        <div class="review-text">Good service! Very helpful info!</div>
+    </div>
+    <div id="rvw1">
+        <h2>Gertrude Weaselton</h2>
+        <div class="review-text">I wish I could take more trips so I could use Traveler again!</div>
+    </div>
+    <div id="rvw3">
+        <h2>Dave Davison</h2>
+        <div class="review-text">What these guys all said.</div>
+    </div>
+</div>
+<script>
+    var review_animate = anime.timeline({
+    duration: 1500, // Can be inherited
+    easing: 'easeOutSine', // Can be inherited
+    loop: true,
+    });
+
+    review_animate.add({
+        targets: "#rvw1",
+        opacity: 1,
+        translateY: -50,
+    })
+    review_animate.add({
+        targets: "#rvw2",
+        opacity: 1,
+        translateY: -50,
+    }, "+=500")
+    review_animate.add({
+        targets: "#rvw3",
+        opacity: 1,
+        translateY: -50,
+    })
+    review_animate.add({
+        targets: "[id^=\"rvw\"]",
+        opacity: 0,
+    }, "+=1000");
+</script>
+<!-- end reviews/timeline segment-->
+
+<!--back to top button-->
+
+<div id="footer">
+    <div id="arrows">
+        <svg id="arr1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+            <g id="_90-Arrow_Up" data-name="90-Arrow Up">
+                <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
+                <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
+            </g>
+        </svg>
+        <svg id="arr2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+            <g id="_90-Arrow_Up" data-name="90-Arrow Up">
+                <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
+                <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
+            </g>
+        </svg>
+        <svg id="arr3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" overflow="visible">
+            <g id="_90-Arrow_Up" data-name="90-Arrow Up">
+                <path d="M16,0A16,16,0,1,0,32,16,16,16,0,0,0,16,0Zm0,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30Z"/>
+                <path d="M15.29,10.29l-8,8,1.41,1.41L16,12.41l7.29,7.29,1.41-1.41-8-8A1,1,0,0,0,15.29,10.29Z"/>
+            </g>
+        </svg>
+    </div>
+</div>
+<div id="goto_top">Go Back to Top</div>
+<!--script for button-->
+<script>
+    // Get references to the button and parent element to animate
+    const button = document.querySelector('#goto_top');
+
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    button.addEventListener('click', () => {topFunction()});
+</script>
+<script>
+    let top_button_anime = anime({
+        targets: '[id^=\"arr\"]',
+        translateY: -25,
+        duration: 300,
+        delay: anime.stagger(150),
+        easing: "easeOutSine",
+        direction: "alternate",
+        loop: true,
+    })
+</script>
 </body>
 </html>
 
